@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Diário de Obra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Relatório Diário de Obra</h1>
+  <p>Nossa emgenharia</p>
+    <form id="reportForm">
+        <fieldset>
+            <legend>Dados do Projeto</legend>
+            <label for="projectName">Nome do Projeto:</label>
+            <input type="text" id="projectName" name="projectName" required>
+            <br>
+            <label for="projectID">ID do Projeto:</label>
+            <input type="text" id="projectID" name="projectID" required>
+            <br>
+            <label for="location">Localização:</label>
+            <input type="text" id="location" name="location" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados do Relatório</legend>
+            <label for="reportDate">Data do Relatório:</label>
+            <input type="date" id="reportDate" name="reportDate" required>
+            <br>
+            <label for="responsibleName">Nome do Responsável:</label>
+            <input type="text" id="responsibleName" name="responsibleName" required>
+            <br>
+            <label for="role">Cargo:</label>
+            <input type="text" id="role" name="role" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Detalhes do Trabalho</legend>
+            <label for="workDescription">Descrição do Trabalho:</label>
+            <textarea id="workDescription" name="workDescription" required></textarea>
+            <br>
+            <label for="materialsUsed">Materiais Utilizados:</label>
+            <textarea id="materialsUsed" name="materialsUsed" required></textarea>
+            <br>
+            <label for="teamMembers">Equipe e Funcionários Presentes:</label>
+            <textarea id="teamMembers" name="teamMembers" required></textarea>
+            <br>
+            <label for="startTime">Horário de Início:</label>
+            <input type="time" id="startTime" name="startTime" required>
+            <br>
+            <label for="endTime">Horário de Término:</label>
+            <input type="time" id="endTime" name="endTime" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Fotos do Serviço</legend>
+            <label for="servicePhotos">Upload de Fotos:</label>
+            <input type="file" id="servicePhotos" name="servicePhotos" accept="image/*" multiple required>
+            <div id="photoPreview"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Observações</legend>
+            <label for="observations">Observações Adicionais:</label>
+            <textarea id="observations" name="observations"></textarea>
+        </fieldset>
+
+        <button type="button" onclick="generatePDF()">Baixar PDF</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
